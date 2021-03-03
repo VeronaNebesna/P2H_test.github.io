@@ -1,31 +1,4 @@
-@mixin flex_column {
-    display: flex;
-    flex-direction: column;
-}
-@mixin flex_row{
-    display: flex;
-    flex-direction: row;
-}
-@mixin title_footer {
-    padding-bottom: 50px;
-    p{
-        color: white;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 35px;
-        line-height: 45px;
-    }
-}
-@mixin icon {
-    width: 50px;
-    height: 40px;
-    color:$color_p
-}
-@mixin icon_text {
-    color: $color_p;
-    font-size: 20px;
-    padding-left: 25px;
-}
-$color_p:rgb(241,205,179);
+@import "./mixins.scss";
 
 // footer
 .section-footer{
@@ -40,63 +13,59 @@ $color_p:rgb(241,205,179);
     @media(min-width:992px){
         text-align: start;
         @include flex_row();
-        align-items: center;
         justify-content: space-between;
     }
+    .qs-block__title{
+        @include title_footer();
+    }
+    .qs-block__email{
+        @include flex_row();
+        align-items: center;
+        justify-content: center;
+        padding-bottom:30px;
+        .qs-block__email-icon{
+            @include icon_f();
+            background: url("../img/envelope.png") no-repeat center;
+        }
+        .qs-block__email-adress{
+            @include icon_text();
+        }
+        @media(min-width:992px){
+            justify-content: flex-start;
+        }
+    }
+    .qs-block__phone{
+        @include flex_row();
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20px;
+        .qs-block__phone-icon{
+            @include icon_f();
+            background: url("../img/telephone.png") no-repeat center;
+        }
+        .qs-block__phone-num{
+            @include icon_text();
+        }
+        @media(min-width:992px){
+            justify-content: flex-start;
+        }
+    }
+    
 }
-.qs-block__title{
-    @include title_footer();
-}
-.qs-block__email{
-    @include flex_row();
-    align-items: center;
-    justify-content: center;
-    padding-bottom:30px;
-    .qs-block__email-icon{
-        @include icon();
-        background: url("../img/envelope.png") no-repeat center;
-    }
-    .qs-block__email-adress{
-        @include icon_text();
-    }
-    @media(min-width:992px){
-        justify-content: flex-start;
-    }
-}
-
-.qs-block__phone{
-    @include flex_row();
-    align-items: center;
-    justify-content: center;
-
-    .qs-block__phone-icon{
-        @include icon();
-        background: url("../img/telephone.png") no-repeat center;
-    }
-    .qs-block__phone-num{
-        @include icon_text();
-    }
-    @media(min-width:992px){
-        justify-content: flex-start;
-    }
-}
-
 .waiting-block__title{
     @include title_footer();
     padding-top: 30px;
     @media(min-width:992px){
         padding-top: 0;
     }
-
 }
 .waiting-block__address{
     @include flex_row();
     align-items: center;
     justify-content: center;
     padding-bottom:25px;
-
     .waiting-block__address-icon{
-        @include icon();
+        @include icon_f();
         background: url("../img/pin.png") no-repeat center;
     }
     .waiting-block__address-name{
@@ -111,11 +80,3 @@ $color_p:rgb(241,205,179);
     height: 310px;
     width: 100%;
 }
-
-
-// tablet
-@media(min-width:768px){}
-// laptop
-@media(min-width:992px){}
-// desktop
-@media(min-width:1200px){}

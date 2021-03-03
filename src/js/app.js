@@ -3,20 +3,19 @@ $(".navigation").click(function(){
     $(this).toggleClass("active");
     if($(".navigation").hasClass("active")){
         $(".menu__items").removeClass("hidden");
-        $(".menu__items").addClass("active")
-
+        $(".menu__items").addClass("active");
     }else{
         $(".menu__items").removeClass("active");
-        $(".menu__items").addClass("hidden")
+        $(".menu__items").addClass("hidden");
     }
-})
+});
 
-
+// slider
 $(document).ready(function(){
     $('.pets-block').slick({
         infinite: true,
         slidesToShow: 3,
-        // autoplay:true,
+        autoplay:true,
         arrows:true,
         prevArrow:"<div class='pet__arrow_left'></div>",
         nextArrow: "<div class='pet__arrow_right'></div>",
@@ -47,5 +46,13 @@ $(document).ready(function(){
 
           ]
     });
-   
-  });
+});
+
+// scroll menu
+
+$(document).ready(function(){
+	$("nav li a").click(function () { 
+		elementClick = $(this).attr("href");
+		destination = $(elementClick).offset().top;
+		$("body,html").animate({scrollTop: destination}, 800); 
+}) }) 

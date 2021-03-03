@@ -1,20 +1,6 @@
-// mixins
-@mixin flex_column {
-    display: flex;
-    flex-direction: column;
-}
-@mixin flex_row{
-    display: flex;
-    flex-direction: row;
-}
-@mixin link {
-    text-decoration: none;
-    display: block;
-}
-// mixins//
+@import "./mixins.scss";
 
 // header
-
 .header-bg{
     padding-top:60px;
     background: url("../img/Background.png") no-repeat center;
@@ -23,9 +9,12 @@
     @include flex_column();
     align-items: center;
     justify-content: space-between;
+    @media(min-width:768px){
+        @include flex_row();
+    }
 }
-// logo
 
+// logo
 .logo__item{
     @include flex_column();
     img{
@@ -33,14 +22,12 @@
     }
 }
 
-
 // menu
-
 .menu__items{
     @include flex_column();
     li{
         list-style: none;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: $font_A;
         font-size: 15px;
         position: relative;
         margin: 0 auto;
@@ -59,12 +46,21 @@
             left:0;
             width: 0;
             height: 3px;
-            background-color: rgb(241,205,179);
-            transition: all .5s ease-in-out;
+            background-color: $color_p;
+            transition:$transition;
             border-radius: 20px;  
         }
         &:hover:after{
             width: 100%;
+        }
+    }
+    @media(min-width:768px){
+        @include flex_row();
+        align-items: center;
+        justify-content: space-between;
+        li{
+            margin:0;
+            width: auto;
         }
     }
 }
@@ -73,22 +69,28 @@
     visibility: hidden;
     position: absolute;
     opacity: 0;
-    height: 0;
-    transition: all .5s ease-in-out;
+    height: 0px;
+    transition: $transition;
+    @media(min-width:768px){
+        width: 100%;
+        visibility: visible;
+        position: static;
+        height: 100%;
+        opacity: 1;
+    }
 }
 .active{
     visibility: visible;
     opacity: 1;
-    height:100%;
+    height:150px;
     transition: all 1s ease-in-out;
 }
 
-
-/* gamburger menu */
+// gamburger-menu
 .navigation{
     width: 70px;
     height: 60px;
-    background-color:rgb(241,205,179);
+    background-color:$color_p;
     position: relative;
     margin:10px 0;
     span{
@@ -101,16 +103,18 @@
         background-color: rgb(41,41,41);
         &:first-child{
             top:13px;
-            transition: all 0.5s ease-in;
+            transition:$transition;
         }
         &:nth-child(2){
             top:29px;
-            transition: all 0.5s ease-in;
+            transition: $transition;
         }
         &:nth-child(3){
             top:45px;
-            transition: all 0.5s ease-in;}
-
+            transition:$transition;}
+    }
+    @media(min-width:768px){
+        display: none;
     }
     
 }
@@ -122,16 +126,16 @@
         &:first-child{
             top:50%;
             transform: rotate(45deg);
-            transition: all 0.5s ease-in;
+            transition: $transition;
         }
         &:nth-child(2){
             display: none;
-            transition: all 0.5s ease-in;
+            transition:$transition;
         }
         &:nth-child(3){
             top:50%;
             transform:rotate(-45deg) ;
-            transition: all 0.5s ease-in;
+            transition: $transition;
         }
     }
 }
@@ -184,7 +188,7 @@
 
 .dog-text__title{
     p{
-        font-family: Georgia,serif;
+        font-family: $font_G;
         font-size: 44px;
         color:rgb(255,255,255);
         line-height: 60px;
@@ -207,7 +211,7 @@
     padding:20px 0;
     p{
         color:rgb(255,255,255);
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: $font_A;
         font-size: 15px;
         line-height:35px;
     }
@@ -217,7 +221,7 @@
     padding-bottom:20px;
     button{
         cursor: pointer;
-        font-family: Georgia,serif;
+        font-family:  $font_G;
         font-size: 17px;
         width: 205px;
         height: 52px;
@@ -233,40 +237,4 @@
     @media(min-width:1200px){
         padding-bottom:250px;
     }
-
-}
-// mobile
-@media(max-width:767px){ 
-}
-// tablet
-@media(min-width:768px){
-    .header{
-        @include flex_row();
-    }
-    .navigation{
-        display: none;
-    }
-    .hidden{
-        width: 100%;
-        visibility: visible;
-        position: static;
-        height: 100%;
-        opacity: 1;
-    }
-    .menu__items{
-        @include flex_row();
-        align-items: center;
-        justify-content: space-between;
-        li{
-            margin:0;
-            width: auto;
-        }
-    }
-
-}
-// laptop
-@media(min-width:992px){
-}
-// desktop
-@media(min-width:1200px){
 }

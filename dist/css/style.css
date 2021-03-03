@@ -10,10 +10,7 @@
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  /* overflow: hidden; */
 }
-
-/* ----rows----- */
 
 .row {
   margin-right: -15px;
@@ -86,7 +83,7 @@
   width: 0;
   height: 3px;
   background-color: #f1cdb3;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in;
   border-radius: 20px;
 }
 
@@ -99,18 +96,16 @@
   visibility: hidden;
   position: absolute;
   opacity: 0;
-  height: 0;
-  transition: all .5s ease-in-out;
+  height: 0px;
+  transition: all 0.5s ease-in;
 }
 
 .active {
   visibility: visible;
   opacity: 1;
-  height: 100%;
+  height: 150px;
   transition: all 1s ease-in-out;
 }
-
-/* gamburger menu */
 
 .navigation {
   width: 70px;
@@ -171,7 +166,7 @@
 }
 
 .dog-text__title p {
-  font-family: Georgia,serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 44px;
   color: white;
   line-height: 60px;
@@ -196,7 +191,7 @@
 
 .dog-text__btn button {
   cursor: pointer;
-  font-family: Georgia,serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 17px;
   width: 205px;
   height: 52px;
@@ -210,7 +205,7 @@
   padding: 50px 0;
 }
 
-.section_dark {
+.section-dark {
   background-color: #f6f6f6;
 }
 
@@ -219,31 +214,31 @@
   flex-direction: column;
 }
 
-.block-about-image_pic {
+.block-about-image__pic {
   padding: 20px 0;
   text-align: center;
 }
 
-.block-about-image_pic img {
+.block-about-image__pic img {
   width: 100%;
 }
 
-.block-about-text__title {
+.block-about-text .block-about-text__title {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.block-about-text__title p {
+.block-about-text .block-about-text__title p {
   color: #545454;
   font-size: 35px;
   padding-bottom: 30px;
   text-align: center;
 }
 
-.block-about-text__subtitle {
+.block-about-text .block-about-text__subtitle {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.block-about-text__subtitle p {
+.block-about-text .block-about-text__subtitle p {
   color: #4c4c4c;
   padding-bottom: 30px;
   font-size: 15px;
@@ -270,11 +265,11 @@
   flex-direction: column;
 }
 
-.pets-block__wrapper {
+.pets-block .pets-block-wrapper {
   padding: 50px 0;
 }
 
-.pet-block {
+.pets-block .pets-block-wrapper .pet-block {
   width: 272px;
   padding: 35px 0;
   background-color: #fafafa;
@@ -282,27 +277,27 @@
   margin: 0 auto;
 }
 
-.pet-block .pet-block__image {
+.pets-block .pets-block-wrapper .pet-block .pet-block__image {
   height: 260px;
 }
 
-.pet-block .pet-block__image img {
+.pets-block .pets-block-wrapper .pet-block .pet-block__image img {
   display: block;
   margin: 0 auto;
 }
 
-.pet-block .pet-block__image .img__w {
+.pets-block .pets-block-wrapper .pet-block .pet-block__image .img__w {
   width: 80%;
 }
 
-.pet-block .pet-block__name p {
+.pets-block .pets-block-wrapper .pet-block .pet-block__name p {
   color: #545454;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 20px;
   padding: 40px 0 20px 0;
 }
 
-.pet-block .pet-block__btn button {
+.pets-block .pets-block-wrapper .pet-block .pet-block__btn button {
   cursor: pointer;
   font-size: 18px;
   width: 200px;
@@ -312,7 +307,7 @@
   border-radius: 30px;
 }
 
-.pet-block .pet-block__btn button:hover {
+.pets-block .pets-block-wrapper .pet-block .pet-block__btn button:hover {
   background-color: #f1cdb3;
 }
 
@@ -329,7 +324,7 @@
   padding-top: 16px;
 }
 
-.pets-btn .pets-btn_bottom {
+.pets-btn .pets-btn__btn_bottom {
   width: 267px;
   height: 52px;
   border-radius: 30px;
@@ -349,70 +344,70 @@
   flex-direction: column;
 }
 
-.help-block__item {
+.help-block-item {
   margin: 0 auto;
   padding-bottom: 10px;
 }
 
-.help-block__item .help-block__item-img {
+.help-block-item .help-block-item__img {
   height: 100px;
 }
 
-.help-block__item .help-block__item-img .help-block__item-img_cat-food {
+.help-block-item .help-block-item__img .help-block-item__img_cat-food {
   width: 100%;
   height: 100%;
   background: url("../img/cat-food.png") no-repeat center;
 }
 
-.help-block__item .help-block__item-img .help-block__item-img_car {
+.help-block-item .help-block-item__img .help-block-item__img_car {
   width: 100%;
   height: 100%;
   background: url("../img/ambulance.png") no-repeat center;
 }
 
-.help-block__item .help-block__item-img .help-block__item-img_toys {
+.help-block-item .help-block-item__img .help-block-item__img_toys {
   width: 100%;
   height: 100%;
   background: url("../img/ball.png") no-repeat center;
 }
 
-.help-block__item .help-block__item-img .help-block__item-img_bowl {
+.help-block-item .help-block-item__img .help-block-item__img_bowl {
   width: 100%;
   height: 100%;
   background: url("../img/bowl.png") no-repeat center;
 }
 
-.help-block__item .help-block__item-img .help-block__item-img_shampoo {
+.help-block-item .help-block-item__img .help-block-item__img_shampoo {
   width: 100%;
   height: 100%;
   background: url("../img/shampoo.png") no-repeat center;
 }
 
-.help-block__item .help-block__item-img .help-block__item-img_vitamins {
+.help-block-item .help-block-item__img .help-block-item__img_vitamins {
   width: 100%;
   height: 100%;
   background: url("../img/pills.png") no-repeat center;
 }
 
-.help-block__item .help-block__item-img .help-block__item-img_syringe {
+.help-block-item .help-block-item__img .help-block-item__img_syringe {
   width: 100%;
   height: 100%;
   background: url("../img/syringe.png") no-repeat center;
 }
 
-.help-block__item .help-block__item-img .help-block__item-img_leash {
+.help-block-item .help-block-item__img .help-block-item__img_leash {
   width: 100%;
   height: 100%;
   background: url("../img/leash.png") no-repeat center;
 }
 
-.help-block__item .help-block__item-img .help-block__item-img_sleep {
+.help-block-item .help-block-item__img .help-block-item__img_sleep {
   width: 100%;
   height: 100%;
   background: url("../img/cat_i.png") no-repeat center;
 }
 
-.help-block__item .help-block__item-text {
+.help-block-item .help-block-item-text {
   text-align: center;
   color: #545454;
 }
@@ -422,31 +417,31 @@
   flex-direction: column;
 }
 
-.donation-block-text__title p {
+.donation-block .donation-block__image {
+  width: 100%;
+  height: 100%;
+  background: url("../img/Dog_f.png") no-repeat center;
+}
+
+.donation-block .donation-block-text__title p {
   color: #545454;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 35px;
   line-height: 45px;
 }
 
-.donation-block-image {
-  width: 100%;
-  height: 100%;
-  background: url("../img/Dog_f.png") no-repeat center;
-}
-
-.donation-block-text__card {
+.donation-block-text-card {
   padding: 30px 0;
 }
 
-.donation-block-text__card p {
+.donation-block-text-card p {
   color: #545454;
   font-size: 15px;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding-bottom: 20px;
 }
 
-.donation-block-text__card .number-card {
+.donation-block-text-card .donation-block-text-card__number-card {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -457,19 +452,19 @@
   border-radius: 10px;
 }
 
-.donation-block-text__card .number-card .card-icon {
+.donation-block-text-card .donation-block-text-card__number-card .donation-block-text-card__card-icon {
   width: 40px;
   height: 40px;
   background: url("../img/credit-card.png") no-repeat center;
 }
 
-.donation-block-text__card .number-card .card-nums {
+.donation-block-text-card .donation-block-text-card__number-card .donation-block-text-card__card-nums {
   color: #343230;
   font-size: 15px;
   padding-top: 20px;
 }
 
-.donation-block-text__card_grey-text p {
+.donation-block-text-card_grey-text p {
   color: #b2b2b2;
   font-style: italic;
   font-family: Arial, Helvetica, sans-serif;
@@ -490,18 +485,18 @@
   flex-direction: column;
 }
 
-.qs-block__title {
+.footer-block .qs-block__title {
   padding-bottom: 50px;
 }
 
-.qs-block__title p {
+.footer-block .qs-block__title p {
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 35px;
   line-height: 45px;
 }
 
-.qs-block__email {
+.footer-block .qs-block__email {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -509,34 +504,35 @@
   padding-bottom: 30px;
 }
 
-.qs-block__email .qs-block__email-icon {
+.footer-block .qs-block__email .qs-block__email-icon {
   width: 50px;
   height: 40px;
   color: #f1cdb3;
   background: url("../img/envelope.png") no-repeat center;
 }
 
-.qs-block__email .qs-block__email-adress {
+.footer-block .qs-block__email .qs-block__email-adress {
   color: #f1cdb3;
   font-size: 20px;
   padding-left: 25px;
 }
 
-.qs-block__phone {
+.footer-block .qs-block__phone {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding-bottom: 20px;
 }
 
-.qs-block__phone .qs-block__phone-icon {
+.footer-block .qs-block__phone .qs-block__phone-icon {
   width: 50px;
   height: 40px;
   color: #f1cdb3;
   background: url("../img/telephone.png") no-repeat center;
 }
 
-.qs-block__phone .qs-block__phone-num {
+.footer-block .qs-block__phone .qs-block__phone-num {
   color: #f1cdb3;
   font-size: 20px;
   padding-left: 25px;
@@ -622,29 +618,9 @@
     width: 100%;
   }
 
-  .dog-block {
-    background: url("../img/Dog.png") no-repeat -28% 12%;
-  }
-
-  .dog-text__title {
-    padding-top: 50px;
-  }
-
   .header {
     display: flex;
     flex-direction: row;
-  }
-
-  .navigation {
-    display: none;
-  }
-
-  .hidden {
-    width: 100%;
-    visibility: visible;
-    position: static;
-    height: 100%;
-    opacity: 1;
   }
 
   .menu__items {
@@ -657,6 +633,26 @@
   .menu__items li {
     margin: 0;
     width: auto;
+  }
+
+  .hidden {
+    width: 100%;
+    visibility: visible;
+    position: static;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .dog-block {
+    background: url("../img/Dog.png") no-repeat -28% 12%;
+  }
+
+  .dog-text__title {
+    padding-top: 50px;
   }
 
   .block-about {
@@ -711,12 +707,12 @@
     flex-direction: row;
   }
 
-  .donation-block-text__card .number-card {
+  .donation-block-text-card .donation-block-text-card__number-card {
     width: 320px;
     height: 47px;
   }
 
-  .donation-block-text__card .number-card .card-nums {
+  .donation-block-text-card .donation-block-text-card__number-card .card-nums {
     font-size: 20px;
   }
 }
@@ -779,19 +775,19 @@
     padding: 90px 0;
   }
 
-  .block-about-image_pic img {
+  .block-about-image__pic img {
     width: 60%;
   }
 
-  .block-about-image_pic {
+  .block-about-image__pic {
     padding: 0px;
   }
 
-  .block-about-text__title p {
+  .block-about-text .block-about-text__title p {
     text-align: start;
   }
 
-  .block-about-text__subtitle p {
+  .block-about-text .block-about-text__subtitle p {
     font-weight: 500;
     line-height: 30px;
   }
@@ -805,15 +801,14 @@
     text-align: start;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
   }
 
-  .qs-block__email {
+  .footer-block .qs-block__email {
     justify-content: flex-start;
   }
 
-  .qs-block__phone {
+  .footer-block .qs-block__phone {
     justify-content: flex-start;
   }
 

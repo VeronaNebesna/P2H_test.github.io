@@ -1,28 +1,4 @@
-
-// mixins
-@mixin flex_column {
-    display: flex;
-    flex-direction: column;
-}
-@mixin flex_row{
-    display: flex;
-    flex-direction: row;
-}
-@mixin arrows {
-    width: 50px;
-    height: 50px;
-    border:2px solid rgb(241,205,179);
-    border-radius: 100%;
-    z-index: 99;
-    position: absolute;
-    top:50%;
-    cursor: pointer;
-}
-// mixins//
-$font_G: Georgia, 'Times New Roman', Times, serif;
-$font_A: Arial, Helvetica, sans-serif;
-$color_p:rgb(241,205,179);
-$color_g:rgb(84,84,84);
+@import "./mixins.scss";
 
 // sections
 .section{
@@ -31,7 +7,7 @@ $color_g:rgb(84,84,84);
         padding: 90px 0;
     }
 }
-.section_dark{
+.section-dark{
     background-color: rgb(246,246,246)
 }
 // sections//
@@ -45,7 +21,7 @@ $color_g:rgb(84,84,84);
     }
 }
 // image
-.block-about-image_pic{
+.block-about-image__pic{
         padding: 20px 0;
         text-align: center;
     img{
@@ -60,30 +36,31 @@ $color_g:rgb(84,84,84);
 }
 
 // title
-.block-about-text__title{
-    font-family:$font_G;
-    p{
-        color:$color_g;
-        font-size: 35px;
-        padding-bottom: 30px;
-        text-align: center;
-        @media(min-width:992px){
-            text-align: start;
+.block-about-text{
+    .block-about-text__title{
+        font-family:$font_G;
+        p{
+            color:$color_g;
+            font-size: 35px;
+            padding-bottom: 30px;
+            text-align: center;
+            @media(min-width:992px){
+                text-align: start;
+            }
         }
     }
-}
-
-// subtitle
-.block-about-text__subtitle{
-    font-family: $font_A;
-    p{
-        color:rgb(76,76,76);
-        padding-bottom: 30px;
-        font-size: 15px;
-        line-height: 20px;
-        @media(min-width:992px){
-            font-weight: 500;
-            line-height: 30px;
+    // subtitle
+    .block-about-text__subtitle{
+        font-family: $font_A;
+        p{
+            color:rgb(76,76,76);
+            padding-bottom: 30px;
+            font-size: 15px;
+            line-height: 20px;
+            @media(min-width:992px){
+                font-weight: 500;
+                line-height: 30px;
+            }
         }
     }
 }
@@ -99,6 +76,7 @@ $color_g:rgb(84,84,84);
         line-height: 45px
     }
 }
+
 // pet
 .pets-row{
     justify-content: center
@@ -115,53 +93,52 @@ $color_g:rgb(84,84,84);
         justify-content: space-around;
 
     }
-}
-.pets-block__wrapper{
-    padding:50px 0;
-}
-
-.pet-block{
-    width: 272px;
-    padding:35px 0;
-    background-color: rgb(250,250,250);
-    text-align: center;
-    margin: 0 auto;
-    .pet-block__image{
-        height: 260px;
-        img{
-            display: block;
+    .pets-block-wrapper{
+        padding:50px 0;
+        .pet-block{
+            width: 272px;
+            padding:35px 0;
+            background-color: rgb(250,250,250);
+            text-align: center;
             margin: 0 auto;
-        }
-        .img__w{
-            width: 80%;
-        }
-    }
-    .pet-block__name{
-        p{
-            color:$color_g;
-            font-family: $font_G;
-            font-size: 20px;
-            padding:40px 0 20px 0;
-        }
-        
-    }
-    .pet-block__btn{
-        button{
-            cursor: pointer;
-            font-size: 18px;
-            width:200px ;
-            height: 50px;
-            border: 2px solid $color_p;
-            background-color: rgba(250,250,250,0);
-            border-radius: 30px;
-            &:hover{
-                background-color: $color_p;
+            .pet-block__image{
+                height: 260px;
+                img{
+                    display: block;
+                    margin: 0 auto;
+                }
+                .img__w{
+                    width: 80%;
+                }
             }
+            .pet-block__name{
+                p{
+                    color:$color_g;
+                    font-family: $font_G;
+                    font-size: 20px;
+                    padding:40px 0 20px 0;
+                }
+                
+            }
+            .pet-block__btn{
+                button{
+                    cursor: pointer;
+                    font-size: 18px;
+                    width:200px ;
+                    height: 50px;
+                    border: 2px solid $color_p;
+                    background-color: rgba(250,250,250,0);
+                    border-radius: 30px;
+                    &:hover{
+                        background-color: $color_p;
+                    }
+                }
+            } 
+            
         }
-    } 
-    
+    }
 }
-
+// arrows for slider
 .pet__arrow_left{
     &:hover{
         background-color:$color_p ;
@@ -188,10 +165,10 @@ $color_g:rgb(84,84,84);
         right:-60px;
     }
  }
- .pets-btn{
+.pets-btn{
     text-align: center;
     padding-top:16px;
-    .pets-btn_bottom {
+    .pets-btn__btn_bottom {
         width: 267px;
         height: 52px;
         border-radius: 30px;
@@ -202,7 +179,6 @@ $color_g:rgb(84,84,84);
         font-size: 17px;
     }
 }
-
 
 // help
 .help-row{
@@ -216,60 +192,54 @@ $color_g:rgb(84,84,84);
         align-items: center;
         justify-content: space-around;
     }
-
 }
-@mixin icon {
-    width: 100%;
-    height: 100%;
-}
-.help-block__item{
+.help-block-item{
     margin: 0 auto;
     padding-bottom: 10px;
-    .help-block__item-img{
+    .help-block-item__img{
         height: 100px;
-        .help-block__item-img_cat-food{
+        .help-block-item__img_cat-food{
             @include icon();
             background: url("../img/cat-food.png") no-repeat center;
         }
-        .help-block__item-img_car{
+        .help-block-item__img_car{
             @include icon();
             background: url("../img/ambulance.png") no-repeat center;
         }
-        .help-block__item-img_toys{
+        .help-block-item__img_toys{
             @include icon();
             background: url("../img/ball.png") no-repeat center;
         }
-        .help-block__item-img_bowl{
+        .help-block-item__img_bowl{
             @include icon();
             background: url("../img/bowl.png") no-repeat center;
         }
-        .help-block__item-img_shampoo{
+        .help-block-item__img_shampoo{
             @include icon();
             background: url("../img/shampoo.png") no-repeat center;
         }
-        .help-block__item-img_vitamins{
+        .help-block-item__img_vitamins{
             @include icon();
             background: url("../img/pills.png") no-repeat center;
         }
-        .help-block__item-img_syringe{
+        .help-block-item__img_syringe{
             @include icon();
             background: url("../img/syringe.png") no-repeat center;
         }
-        .help-block__item-img_leash{
+        .help-block-item__img_leash{
             @include icon();
             background: url("../img/leash.png") no-repeat center;
         }
-        .help-block__item-img_sleep{
+        .help-block-item__img_sleep{
             @include icon();
             background: url("../img/cat_i.png") no-repeat center;
         }
     }
-    .help-block__item-text{
+    .help-block-item-text{
         text-align: center;
         color:$color_g;
     }
 }
-
 
 // donation
 .donation-block{
@@ -277,22 +247,23 @@ $color_g:rgb(84,84,84);
     @media(min-width:768px){
         @include flex_row()
     }
-}
-.donation-block-text__title{
-    p{
-        color:$color_g;
-        font-family: $font_G;
-        font-size: 35px;
-        line-height: 45px
+    .donation-block__image{
+        width: 100%;
+        height: 100%;
+        background: url("../img/Dog_f.png") no-repeat center;
+        
+    }
+    .donation-block-text__title{
+        p{
+            color:$color_g;
+            font-family: $font_G;
+            font-size: 35px;
+            line-height: 45px
+        }
     }
 }
-.donation-block-image{
-    width: 100%;
-    height: 100%;
-    background: url("../img/Dog_f.png") no-repeat center;
-    
-}
-.donation-block-text__card{
+
+.donation-block-text-card{
     padding:30px 0;
     p{
         color:$color_g;
@@ -301,7 +272,7 @@ $color_g:rgb(84,84,84);
         padding-bottom: 20px;
 
     }
-    .number-card{
+    .donation-block-text-card__number-card{
         @include flex_row();
         align-items: center;
         justify-content: space-around;
@@ -309,12 +280,12 @@ $color_g:rgb(84,84,84);
         height: 47px;
         background-color: $color_p;
         border-radius: 10px;
-        .card-icon{
+        .donation-block-text-card__card-icon{
             width: 40px;
             height: 40px;
             background: url("../img/credit-card.png") no-repeat center;
         }
-        .card-nums{
+        .donation-block-text-card__card-nums{
             color:rgb(52,50,48);
             font-size: 15px;
             padding-top: 20px;
@@ -329,7 +300,7 @@ $color_g:rgb(84,84,84);
     }
    
 }
-.donation-block-text__card_grey-text{
+.donation-block-text-card_grey-text{
     p{
         color:rgb(178,178,178);
         font-style: italic;
@@ -337,12 +308,3 @@ $color_g:rgb(84,84,84);
         line-height: 20px;
     }
 }
-
-
-
-// tablet
-@media(min-width:768px){}
-// laptop
-@media(min-width:992px){}
-// desktop
-@media(min-width:1200px){}
