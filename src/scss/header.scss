@@ -3,7 +3,8 @@
 // header
 .header-bg{
     padding-top:60px;
-    background: url("../img/Background.png") no-repeat center;
+    background: url("../img/Background.png") no-repeat;
+    background-size: cover;
 }
 .header{
     @include flex_column();
